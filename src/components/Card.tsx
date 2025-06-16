@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/card.css";
+import "../app/globals.css";
 
 export type CardProps = {
   title?: string;
