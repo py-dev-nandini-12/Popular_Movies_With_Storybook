@@ -1,0 +1,66 @@
+.storybook-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  max-width: 320px;
+  margin: 16px;
+}
+
+.storybook-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.storybook-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+.storybook-card-content {
+  padding: 20px;
+}
+
+.storybook-card-title {
+  margin: 0 0 12px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.4;
+}
+
+.storybook-card-description {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Size variants */
+.storybook-card--compact {
+  max-width: 280px;
+}
+
+.storybook-card--compact .storybook-card-image {
+  height: 160px;
+}
+
+.storybook-card--compact .storybook-card-content {
+  padding: 16px;
+}
+
+.storybook-card--wide {
+  max-width: 400px;
+}
+
+.storybook-card--no-image .storybook-card-content {
+  padding: 24px;
+}
