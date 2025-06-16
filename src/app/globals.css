@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: linear-gradient(135deg, #fef7ff 0%, #f0f9ff 25%, #f0fdf4 50%, #fffbeb 75%, #fef2f2 100%);
+  --background: linear-gradient(
+    135deg,
+    #fef7ff 0%,
+    #f0f9ff 25%,
+    #f0fdf4 50%,
+    #fffbeb 75%,
+    #fef2f2 100%
+  );
   --background-solid: #fdfcff;
   --foreground: #374151;
   --card-bg: rgba(255, 255, 255, 0.8);
@@ -18,7 +25,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: linear-gradient(135deg, #1e1b26 0%, #2d1b69 25%, #134e4a 50%, #92400e 75%, #991b1b 100%);
+    --background: linear-gradient(
+      135deg,
+      #1e1b26 0%,
+      #2d1b69 25%,
+      #134e4a 50%,
+      #92400e 75%,
+      #991b1b 100%
+    );
     --background-solid: #1a1625;
     --foreground: #e2e8f0;
     --card-bg: rgba(255, 255, 255, 0.05);
@@ -43,16 +57,27 @@ body {
 
 /* Add a beautiful overlay pattern */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(120, 219, 226, 0.1) 0%, transparent 50%);
+  background: radial-gradient(
+      circle at 20% 50%,
+      rgba(120, 119, 198, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 119, 198, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(120, 219, 226, 0.1) 0%,
+      transparent 50%
+    );
   pointer-events: none;
   z-index: -1;
 }
@@ -235,7 +260,14 @@ body::before {
 }
 
 .storybook-button--primary {
-  background: linear-gradient(135deg, #8b5fbf 0%, #6366f1 25%, #8b5cf6 50%, #ec4899 75%, #f59e0b 100%);
+  background: linear-gradient(
+    135deg,
+    #8b5fbf 0%,
+    #6366f1 25%,
+    #8b5cf6 50%,
+    #ec4899 75%,
+    #f59e0b 100%
+  );
   color: white;
   border: 2px solid transparent;
   font-weight: 700;
@@ -243,14 +275,25 @@ body::before {
 }
 
 .storybook-button--primary:hover {
-  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 25%, #7c2d12 50%, #be185d 75%, #d97706 100%);
+  background: linear-gradient(
+    135deg,
+    #7c3aed 0%,
+    #4f46e5 25%,
+    #7c2d12 50%,
+    #be185d 75%,
+    #d97706 100%
+  );
   transform: translateY(-2px);
   box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.3),
     0 10px 10px -5px rgba(139, 92, 246, 0.2);
 }
 
 .storybook-button--secondary {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 250, 252, 0.95) 100%
+  );
   color: #374151;
   border: 2px solid rgba(139, 92, 246, 0.2);
   backdrop-filter: blur(10px);
@@ -258,7 +301,11 @@ body::before {
 }
 
 .storybook-button--secondary:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(240, 249, 255, 1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(240, 249, 255, 1) 100%
+  );
   border-color: rgba(139, 92, 246, 0.4);
   color: #1f2937;
   transform: translateY(-2px);
@@ -331,7 +378,14 @@ body::before {
   font-size: 24px;
   line-height: 1;
   margin: 0;
-  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 25%, #fad0c4 50%, #ffd1ff 75%, #c2e9fb 100%);
+  background: linear-gradient(
+    135deg,
+    #ff9a9e 0%,
+    #fad0c4 25%,
+    #fad0c4 50%,
+    #ffd1ff 75%,
+    #c2e9fb 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -353,7 +407,12 @@ body::before {
   font-size: 14px;
   margin-right: 16px;
   padding: 8px 16px;
-  background: linear-gradient(135deg, rgba(255, 240, 245, 0.8) 0%, rgba(240, 249, 255, 0.8) 50%, rgba(240, 253, 244, 0.8) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 240, 245, 0.8) 0%,
+    rgba(240, 249, 255, 0.8) 50%,
+    rgba(240, 253, 244, 0.8) 100%
+  );
   border-radius: 12px;
   border: 1px solid rgba(255, 182, 193, 0.3);
   backdrop-filter: blur(10px);
@@ -471,7 +530,14 @@ body::before {
   }
 
   .storybook-header h1 {
-    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 25%, #ec4899 50%, #8b5cf6 75%, #6366f1 100%);
+    background: linear-gradient(
+      135deg,
+      #fbbf24 0%,
+      #f59e0b 25%,
+      #ec4899 50%,
+      #8b5cf6 75%,
+      #6366f1 100%
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
