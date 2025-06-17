@@ -11,59 +11,14 @@ export interface MovieGridProps {
 }
 
 const LoadingSkeleton = () => (
-  <div 
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-      gap: "24px",
-      padding: "24px",
-    }}
-  >
+  <div className="movie-grid-loading">
     {Array.from({ length: 8 }).map((_, index) => (
-      <div
-        key={index}
-        style={{
-          background: "var(--card-bg)",
-          borderRadius: "20px",
-          overflow: "hidden",
-          maxWidth: "320px",
-          margin: "0 auto",
-          animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        }}
-      >
-        <div
-          style={{
-            height: "200px",
-            background: "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%)",
-            backgroundSize: "200% 100%",
-            animation: "shimmer 1.5s ease-in-out infinite",
-          }}
-        />
-        <div style={{ padding: "24px" }}>
-          <div
-            style={{
-              height: "24px",
-              background: "rgba(0,0,0,0.1)",
-              borderRadius: "4px",
-              marginBottom: "12px",
-            }}
-          />
-          <div
-            style={{
-              height: "16px",
-              background: "rgba(0,0,0,0.1)",
-              borderRadius: "4px",
-              marginBottom: "8px",
-            }}
-          />
-          <div
-            style={{
-              height: "16px",
-              background: "rgba(0,0,0,0.1)",
-              borderRadius: "4px",
-              width: "60%",
-            }}
-          />
+      <div key={index} className="loading-skeleton-card">
+        <div className="loading-skeleton-image" />
+        <div className="loading-skeleton-content">
+          <div className="loading-skeleton-title" />
+          <div className="loading-skeleton-text" />
+          <div className="loading-skeleton-text loading-skeleton-text--short" />
         </div>
       </div>
     ))}
@@ -78,44 +33,10 @@ export const MovieGrid = ({
 }: MovieGridProps) => {
   if (error) {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "48px 24px",
-          textAlign: "center",
-          minHeight: "300px",
-        }}
-      >
-        <div
-          style={{
-            fontSize: "48px",
-            marginBottom: "16px",
-          }}
-        >
-          🎬
-        </div>
-        <h3
-          style={{
-            color: "var(--text-primary)",
-            marginBottom: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-          }}
-        >
-          Oops! Something went wrong
-        </h3>
-        <p
-          style={{
-            color: "var(--text-secondary)",
-            maxWidth: "400px",
-            lineHeight: "1.6",
-          }}
-        >
-          {error}
-        </p>
+      <div className="state-container">
+        <div className="state-icon">🎬</div>
+        <h3 className="state-title">Oops! Something went wrong</h3>
+        <p className="state-message">{error}</p>
       </div>
     );
   }
@@ -126,42 +47,10 @@ export const MovieGrid = ({
 
   if (movies.length === 0) {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "48px 24px",
-          textAlign: "center",
-          minHeight: "300px",
-        }}
-      >
-        <div
-          style={{
-            fontSize: "48px",
-            marginBottom: "16px",
-          }}
-        >
-          🎥
-        </div>
-        <h3
-          style={{
-            color: "var(--text-primary)",
-            marginBottom: "8px",
-            fontSize: "18px",
-            fontWeight: "600",
-          }}
-        >
-          No movies found
-        </h3>
-        <p
-          style={{
-            color: "var(--text-secondary)",
-            maxWidth: "400px",
-            lineHeight: "1.6",
-          }}
-        >
+      <div className="state-container">
+        <div className="state-icon">🎥</div>
+        <h3 className="state-title">No movies found</h3>
+        <p className="state-message">
           We couldn&apos;t find any movies to display right now.
         </p>
       </div>
@@ -169,15 +58,7 @@ export const MovieGrid = ({
   }
 
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-        gap: "24px",
-        padding: "24px",
-        justifyItems: "center",
-      }}
-    >
+    <div className="movie-grid">
       {movies.map((movie) => (
         <MovieCard
           key={movie.id}

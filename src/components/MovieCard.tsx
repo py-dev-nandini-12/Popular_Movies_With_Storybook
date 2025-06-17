@@ -3,8 +3,8 @@ import { Movie } from "../types/movie";
 import "../app/globals.css";
 
 // Movie utility functions (moved from MovieService)
-const getImageUrl = (path: string | null, size: string = 'w500'): string => {
-  if (!path) return '/placeholder-movie.svg';
+const getImageUrl = (path: string | null, size: string = "w500"): string => {
+  if (!path) return "/placeholder-movie.svg";
   return `https://image.tmdb.org/t/p/${size}${path}`;
 };
 
@@ -43,7 +43,7 @@ export const MovieCard = ({
 
   return (
     <div className={cardClasses} onClick={handleClick} {...props}>
-      <div style={{ position: "relative" }}>
+      <div className="storybook-card-image-container">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={posterUrl}
@@ -51,27 +51,10 @@ export const MovieCard = ({
           className="storybook-card-image"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
-            target.src = '/placeholder-movie.svg';
+            target.src = "/placeholder-movie.svg";
           }}
         />
-        <div
-          style={{
-            position: "absolute",
-            top: "8px",
-            right: "8px",
-            background: "rgba(0, 0, 0, 0.8)",
-            color: "white",
-            padding: "4px 8px",
-            borderRadius: "8px",
-            fontSize: "12px",
-            fontWeight: "600",
-            display: "flex",
-            alignItems: "center",
-            gap: "4px",
-          }}
-        >
-          ⭐ {rating}
-        </div>
+        <div className="storybook-card-rating-badge">⭐ {rating}</div>
       </div>
       <div className="storybook-card-content">
         <h3 className="storybook-card-title">
@@ -82,25 +65,9 @@ export const MovieCard = ({
             ? `${movie.overview.substring(0, 120)}...`
             : movie.overview}
         </p>
-        <div
-          style={{
-            marginTop: "12px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            fontSize: "12px",
-            color: "var(--text-secondary)",
-          }}
-        >
+        <div className="storybook-card-meta">
           <span>{movie.vote_count} votes</span>
-          <span style={{ 
-            background: "var(--accent-blue)", 
-            color: "white", 
-            padding: "2px 6px", 
-            borderRadius: "4px",
-            fontSize: "10px",
-            fontWeight: "600"
-          }}>
+          <span className="storybook-card-language-badge">
             {movie.original_language.toUpperCase()}
           </span>
         </div>
