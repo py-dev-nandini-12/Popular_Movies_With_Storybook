@@ -9,11 +9,11 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 // In production, you should get your own API key from https://www.themoviedb.org/settings/api
 const DEMO_API_KEY = '8265bd1679663a7ea12ac168da84d2e8';
 
-function getApiKey(): string {
+const getApiKey = (): string => {
   return API_KEY !== 'demo_key' ? API_KEY : DEMO_API_KEY;
 }
 
-export async function getTopRatedMovies(page: number = 1): Promise<MovieResponse> {
+export const getTopRatedMovies = async (page: number = 1): Promise<MovieResponse> => {
   try {
     const response = await fetch(
       `${BASE_URL}/movie/top_rated?api_key=${getApiKey()}&page=${page}&language=en-US`,
@@ -33,7 +33,7 @@ export async function getTopRatedMovies(page: number = 1): Promise<MovieResponse
   }
 }
 
-export async function getPopularMovies(page: number = 1): Promise<MovieResponse> {
+export const getPopularMovies = async (page: number = 1): Promise<MovieResponse> => {
   try {
     const response = await fetch(
       `${BASE_URL}/movie/popular?api_key=${getApiKey()}&page=${page}&language=en-US`,
@@ -53,7 +53,7 @@ export async function getPopularMovies(page: number = 1): Promise<MovieResponse>
   }
 }
 
-export async function getNowPlayingMovies(page: number = 1): Promise<MovieResponse> {
+export const getNowPlayingMovies = async (page: number = 1): Promise<MovieResponse> => {
   try {
     const response = await fetch(
       `${BASE_URL}/movie/now_playing?api_key=${getApiKey()}&page=${page}&language=en-US`,

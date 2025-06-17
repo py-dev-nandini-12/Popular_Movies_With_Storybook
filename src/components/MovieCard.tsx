@@ -1,7 +1,20 @@
 import * as React from "react";
 import { Movie } from "../types/movie";
-import { MovieService } from "../services/movieService";
 import "../app/globals.css";
+
+// Movie utility functions (moved from MovieService)
+const getImageUrl = (path: string | null, size: string = 'w500'): string => {
+  if (!path) return '/placeholder-movie.svg';
+  return `https://image.tmdb.org/t/p/${size}${path}`;
+};
+
+const formatRating = (rating: number): string => {
+  return (rating / 2).toFixed(1); // Convert from 10-point to 5-point scale
+};
+
+const formatYear = (dateString: string): string => {
+  return new Date(dateString).getFullYear().toString();
+};
 
 export interface MovieCardProps {
   movie: Movie;
@@ -24,9 +37,9 @@ export const MovieCard = ({
     }
   };
 
-  const posterUrl = MovieService.getImageUrl(movie.poster_path);
-  const rating = MovieService.formatRating(movie.vote_average);
-  const year = MovieService.formatYear(movie.release_date);
+  const posterUrl = getImageUrl(movie.poster_path);
+  const rating = formatRating(movie.vote_average);
+  const year = formatYear(movie.release_date);
 
   return (
     <div className={cardClasses} onClick={handleClick} {...props}>
