@@ -14,3 +14,7 @@ export type { MovieCardProps } from "./MovieCard";
 
 export { MovieGrid } from "./MovieGrid";
 export type { MovieGridProps } from "./MovieGrid";
+
+export { MovieAppClient } from "./MovieAppClient";
+
+export { HeaderClient } from "./HeaderClient";

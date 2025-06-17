@@ -1,0 +1,58 @@
+/* Custom Storybook Background Styling */
+
+/* Override Storybook's default background */
+.sb-show-main,
+.sb-main-padded {
+  background: linear-gradient(
+    135deg, 
+    #667eea 0%, 
+    #764ba2 25%, 
+    #f093fb 50%, 
+    #f5576c 75%, 
+    #4facfe 100%
+  ) !important;
+  background-attachment: fixed !important;
+  min-height: 100vh !important;
+}
+
+/* Style the docs page background */
+.sbdocs-wrapper {
+  background: linear-gradient(
+    135deg, 
+    #667eea 0%, 
+    #764ba2 25%, 
+    #f093fb 50%, 
+    #f5576c 75%, 
+    #4facfe 100%
+  ) !important;
+  background-attachment: fixed !important;
+}
+
+/* Style the canvas/preview area */
+#storybook-preview-iframe {
+  background: transparent !important;
+}
+
+/* Add a beautiful overlay pattern */
+.sb-show-main::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Ensure text readability on the new background */
+.sb-bar,
+.sidebar-container,
+.sb-panel {
+  backdrop-filter: blur(10px) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+}
