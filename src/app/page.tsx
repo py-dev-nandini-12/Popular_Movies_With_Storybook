@@ -4,7 +4,7 @@ import { HeaderClient } from "../components/HeaderClient";
 import { MovieAppClient } from "../components/MovieAppClient";
 import { getTopRatedMovies } from "./actions";
 
-export default async function Home() {
+const Home = async () => {
   // Fetch initial data on the server
   let initialMovies: Movie[] = [];
   let error: string | null = null;
@@ -77,4 +77,6 @@ export default async function Home() {
       </main>
     </div>
   );
-}
+};
+
+export default Home;
