@@ -1,0 +1,7 @@
+{
+  "name": "movie-app",
+  "buildCommand": "npm run build-next",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "framework": "nextjs"
+}

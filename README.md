@@ -147,6 +147,29 @@ npm run build
 
 ## Deployment
 
+This project supports **dual deployment** from the main branch:
+
+### 🎬 Movie App Deployment
+Deploy the Next.js movie app to Vercel:
+- **Build Command**: `npm run build-next`
+- **Output**: `.next/` directory
+- **URL**: Your main movie app domain
+
+### 📚 Storybook Deployment  
+Deploy the component documentation to a separate Vercel project:
+- **Build Command**: `npm run build-storybook`
+- **Output**: `storybook-static/` directory  
+- **URL**: Your storybook documentation domain
+
+### Quick Deploy to Vercel:
+1. Import your repository **twice** in Vercel dashboard
+2. Configure each project with different build commands (see `DEPLOYMENT.md`)
+3. Add `TMDB_API_KEY` environment variable to movie app project only
+
+**Result**: Two live URLs - one for your movie app, one for your design system!
+
+See `DEPLOYMENT.md` for detailed deployment instructions.
+
 The app is optimized for Vercel deployment:
 
 ```bash
