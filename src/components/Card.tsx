@@ -25,7 +25,7 @@ export const Card = ({
   return (
     <div className={cardClasses} {...props}>
       {image && (
-        <div style={{ position: "relative" }}>
+        <div className="storybook-card-image-container">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={image}

@@ -331,6 +331,17 @@ body::before {
   border-radius: 16px;
 }
 
+/* Custom background color support */
+.storybook-button--custom[data-bg-color] {
+  background: var(--custom-bg-color) !important;
+}
+
+.storybook-button--custom {
+  --custom-bg-color: var(--bg-color, #6366f1);
+  background: var(--custom-bg-color);
+  color: white;
+}
+
 /* Beautiful Header Styles */
 .storybook-header {
   font-family: "Inter", sans-serif;

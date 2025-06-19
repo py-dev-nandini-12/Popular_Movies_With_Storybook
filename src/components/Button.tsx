@@ -25,13 +25,18 @@ export const Button = ({
   const mode = primary
     ? "storybook-button--primary"
     : "storybook-button--secondary";
+  
+  // Build className with custom background color class
+  const customColorClass = backgroundColor ? "storybook-button--custom" : "";
+  const className = ["storybook-button", `storybook-button--${size}`, mode, customColorClass]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <button
       type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
-      style={{ backgroundColor }}
+      className={className}
+      {...(backgroundColor && { 'data-bg-color': backgroundColor })}
       {...props}
     >
       {label}
